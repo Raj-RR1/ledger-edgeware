@@ -169,6 +169,10 @@ parser_error_t _readBytes(parser_context_t* c, pd_Bytes_t* v)
     return parser_ok;
 }
 
+parser_error_t _readVecu8(parser_context_t* c, pd_Vecu8_t* v) {
+    GEN_DEF_READVECTOR(u8)
+}
+
 parser_error_t _readTupleDataData(parser_context_t* c, pd_TupleDataData_t* v)
 {
     CHECK_INPUT();
@@ -500,6 +504,16 @@ parser_error_t _toStringBytes(
     uint8_t* pageCount)
 {
     GEN_DEF_TOSTRING_ARRAY(v->_len);
+}
+
+parser_error_t _toStringVecu8(
+    const pd_Vecu8_t* v,
+    char* outValue,
+    uint16_t outValueLen,
+    uint8_t pageIdx,
+    uint8_t* pageCount)
+{
+    GEN_DEF_TOSTRING_VECTOR(u8);
 }
 
 parser_error_t _toStringTupleDataData(

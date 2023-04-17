@@ -204,7 +204,7 @@ typedef compactInt_t pd_CompactGas_V1_t;
 
 typedef compactInt_t pd_CompactMemberCount_V1_t;
 
-typedef compactInt_t pd_CompactMoment_V1_t;
+typedef compactInt_t pd_Compactu64_V2_t;
 
 typedef compactInt_t pd_CompactPropIndex_V1_t;
 
@@ -307,7 +307,7 @@ typedef struct {
 
 typedef struct {
     uint32_t value;
-} pd_Perbill_V1_t;
+} pd_Perbill_V2_t;
 
 typedef struct {
     compactInt_t value;

@@ -34,7 +34,7 @@ Please:
 | Name        | Light | XL | Nesting | Arguments |
 | :---------- |:------------:|:--------:|:--------:|:--------|
 |fill_block |    | :heavy_check_mark: | :heavy_check_mark: | `Perbill` _ratio <br/> |
-|remark |    | :heavy_check_mark: | :heavy_check_mark: | `Bytes` _remark <br/> |
+|remark |    | :heavy_check_mark: | :heavy_check_mark: | `Vecu8` _remark <br/> |
 |set_heap_pages |    | :heavy_check_mark: | :heavy_check_mark: | `u64` pages <br/> |
 |set_code |    | :heavy_check_mark: | :heavy_check_mark: | `Bytes` code <br/> |
 |set_code_without_checks |    | :heavy_check_mark: | :heavy_check_mark: | `Bytes` code <br/> |
@@ -60,7 +60,7 @@ Empty
 
 | Name        | Light | XL | Nesting | Arguments |
 | :---------- |:------------:|:--------:|:--------:|:--------|
-|set |    | :heavy_check_mark: |   | `Compact<u64> (Moment)` now <br/> |
+|set |    | :heavy_check_mark: |   | `Compactu64` now <br/> |
 
 ## Authorship
 

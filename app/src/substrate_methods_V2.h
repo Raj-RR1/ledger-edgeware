@@ -22,13 +22,13 @@ extern "C" {
 #endif
 
 #include "substrate_types.h"
-#include "substrate_types_V1.h"
+#include "substrate_types_V2.h"
 #include <stddef.h>
 #include <stdint.h>
 
 #define PD_CALL_SYSTEM_V1 0
 #define PD_CALL_UTILITY_V1 1
-#define PD_CALL_TIMESTAMP_V1 3
+#define PD_CALL_TIMESTAMP_V2 3
 #define PD_CALL_INDICES_V1 5
 #define PD_CALL_BALANCES_V1 6
 #define PD_CALL_STAKING_V1 8
@@ -116,10 +116,10 @@ typedef struct {
 
 #ifdef SUBSTRATE_PARSER_FULL
 
-#define PD_CALL_TIMESTAMP_SET_V1 0
+#define PD_CALL_TIMESTAMP_SET_V2 0
 typedef struct {
-    pd_CompactMoment_V1_t now;
-} pd_timestamp_set_V1_t;
+    pd_Compactu64_V2_t now;
+} pd_timestamp_set_V2_t;
 
 #define PD_CALL_INDICES_CLAIM_V1 0
 typedef struct {
@@ -634,7 +634,7 @@ typedef union {
     pd_staking_rebond_V1_t staking_rebond_V1;
     pd_session_purge_keys_V1_t session_purge_keys_V1;
 #ifdef SUBSTRATE_PARSER_FULL
-    pd_timestamp_set_V1_t timestamp_set_V1;
+    pd_timestamp_set_V2_t timestamp_set_V2;
     pd_indices_claim_V1_t indices_claim_V1;
     pd_indices_transfer_V1_t indices_transfer_V1;
     pd_indices_free_V1_t indices_free_V1;
@@ -743,15 +743,15 @@ typedef struct {
 } pd_balances_transfer_keep_alive_V1_t;
 
 #ifdef SUBSTRATE_PARSER_FULL
-#define PD_CALL_SYSTEM_FILL_BLOCK_V1 0
+#define PD_CALL_SYSTEM_FILL_BLOCK_V2 0
 typedef struct {
-    pd_Perbill_V1_t _ratio;
-} pd_system_fill_block_V1_t;
+    pd_Perbill_V2_t _ratio;
+} pd_system_fill_block_V2_t;
 
-#define PD_CALL_SYSTEM_REMARK_V1 1
+#define PD_CALL_SYSTEM_REMARK_V2 1
 typedef struct {
-    pd_Bytes_t _remark;
-} pd_system_remark_V1_t;
+    pd_Vecu8_t _remark;
+} pd_system_remark_V2_t;
 
 #define PD_CALL_SYSTEM_SET_HEAP_PAGES_V1 2
 typedef struct {
@@ -792,8 +792,8 @@ typedef union {
     pd_balances_transfer_V1_t balances_transfer_V1;
     pd_balances_transfer_keep_alive_V1_t balances_transfer_keep_alive_V1;
 #ifdef SUBSTRATE_PARSER_FULL
-    pd_system_fill_block_V1_t system_fill_block_V1;
-    pd_system_remark_V1_t system_remark_V1;
+    pd_system_fill_block_V2_t system_fill_block_V2;
+    pd_system_remark_V2_t system_remark_V2;
     pd_system_set_heap_pages_V1_t system_set_heap_pages_V1;
     pd_system_set_code_V1_t system_set_code_V1;
     pd_system_set_code_without_checks_V1_t system_set_code_without_checks_V1;

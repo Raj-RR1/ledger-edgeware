@@ -16,7 +16,7 @@
 #include "bignum.h"
 #include "coin.h"
 #include "parser_impl.h"
-#include "substrate_dispatch_V1.h"
+#include "substrate_dispatch_V2.h"
 #include "substrate_strings.h"
 
 #include <stddef.h>
@@ -54,7 +54,7 @@ parser_error_t _readCompactMemberCount_V1(parser_context_t* c, pd_CompactMemberC
     return _readCompactInt(c, v);
 }
 
-parser_error_t _readCompactMoment_V1(parser_context_t* c, pd_CompactMoment_V1_t* v)
+parser_error_t _readCompactu64_V2(parser_context_t* c, pd_Compactu64_V2_t* v)
 {
     return _readCompactInt(c, v);
 }
@@ -296,7 +296,7 @@ parser_error_t _readOpaqueCall_V1(parser_context_t* c, pd_OpaqueCall_V1_t* v)
     return _readCall(c, &v->call);
 }
 
-parser_error_t _readPerbill_V1(parser_context_t* c, pd_Perbill_V1_t* v)
+parser_error_t _readPerbill_V2(parser_context_t* c, pd_Perbill_V2_t* v)
 {
     return _readUInt32(c, &v->value);
 }
@@ -596,8 +596,8 @@ parser_error_t _toStringCompactMemberCount_V1(
     return _toStringCompactInt(v, 0, "", "", outValue, outValueLen, pageIdx, pageCount);
 }
 
-parser_error_t _toStringCompactMoment_V1(
-    const pd_CompactMoment_V1_t* v,
+parser_error_t _toStringCompactu64_V2(
+    const pd_Compactu64_V2_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
@@ -1265,8 +1265,8 @@ parser_error_t _toStringOpaqueCall_V1(
     return _toStringCall(&v->call, outValue, outValueLen, pageIdx, pageCount);
 }
 
-parser_error_t _toStringPerbill_V1(
-    const pd_Perbill_V1_t* v,
+parser_error_t _toStringPerbill_V2(
+    const pd_Perbill_V2_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,

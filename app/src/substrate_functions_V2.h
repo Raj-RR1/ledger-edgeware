@@ -20,8 +20,8 @@ extern "C" {
 #endif
 
 #include "parser_common.h"
-#include "substrate_methods_V1.h"
-#include "substrate_types_V1.h"
+#include "substrate_methods_V2.h"
+#include "substrate_types_V2.h"
 #include <stddef.h>
 #include <stdint.h>
 
@@ -42,7 +42,7 @@ parser_error_t _readCompactBountyIndex_V1(parser_context_t* c, pd_CompactBountyI
 parser_error_t _readCompactEraIndex_V1(parser_context_t* c, pd_CompactEraIndex_V1_t* v);
 parser_error_t _readCompactGas_V1(parser_context_t* c, pd_CompactGas_V1_t* v);
 parser_error_t _readCompactMemberCount_V1(parser_context_t* c, pd_CompactMemberCount_V1_t* v);
-parser_error_t _readCompactMoment_V1(parser_context_t* c, pd_CompactMoment_V1_t* v);
+parser_error_t __readCompactu64_V2(parser_context_t* c, pd_Compactu64_V2_t* v);
 parser_error_t _readCompactPerBill_V1(parser_context_t* c, pd_CompactPerBill_V1_t* v);
 parser_error_t _readCompactPropIndex_V1(parser_context_t* c, pd_CompactPropIndex_V1_t* v);
 parser_error_t _readCompactProposalIndex_V1(parser_context_t* c, pd_CompactProposalIndex_V1_t* v);
@@ -76,7 +76,7 @@ parser_error_t _readOptionProxyType_V1(parser_context_t* c, pd_OptionProxyType_V
 parser_error_t _readOptionReferendumIndex_V1(parser_context_t* c, pd_OptionReferendumIndex_V1_t* v);
 parser_error_t _readOptionTimepoint_V1(parser_context_t* c, pd_OptionTimepoint_V1_t* v);
 parser_error_t _readOptionU256_V1(parser_context_t* c, pd_OptionU256_V1_t* v);
-parser_error_t _readPerbill_V1(parser_context_t* c, pd_Perbill_V1_t* v);
+parser_error_t _readPerbill_V2(parser_context_t* c, pd_Perbill_V2_t* v);
 parser_error_t _readPercent_V1(parser_context_t* c, pd_Percent_V1_t* v);
 parser_error_t _readPeriod_V1(parser_context_t* c, pd_Period_V1_t* v);
 parser_error_t _readPriority_V1(parser_context_t* c, pd_Priority_V1_t* v);
@@ -218,8 +218,8 @@ parser_error_t _toStringCompactMemberCount_V1(
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringCompactMoment_V1(
-    const pd_CompactMoment_V1_t* v,
+parser_error_t _toStringCompactu64_V2(
+    const pd_Compactu64_V2_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
@@ -456,8 +456,8 @@ parser_error_t _toStringOptionU256_V1(
     uint8_t pageIdx,
     uint8_t* pageCount);
 
-parser_error_t _toStringPerbill_V1(
-    const pd_Perbill_V1_t* v,
+parser_error_t _toStringPerbill_V2(
+    const pd_Perbill_V2_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
