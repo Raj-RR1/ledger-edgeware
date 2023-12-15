@@ -14183,6 +14183,33 @@
     ]
   },
   {
+    "index": 686,
+    "name": "Democracy_Blacklist",
+    "blob": "0a17313a543c56e56c1b792d32e102c14e4f38766719793160621a591bfaedf22bb600d5030033158139ae28a3dfaac5fe1560a5e9e05c3500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
+    "output": [
+      "0 | Democracy : Blacklist",
+      "1 | Proposal hash [1/2]: 313a543c56e56c1b792d32e102c14e4f387667",
+	    "1 | Proposal hash [2/2]: 19793160621a591bfaedf22bb6",
+	    "2 | Maybe ref index : None",
+      "3 | Tip [1/2] : EDG 123456789012345678901.234567890123",
+      "3 | Tip [2/2] : 456789"
+    ],
+    "output_expert": [
+      "0 | Democracy : Blacklist",
+      "1 | Proposal hash [1/2]: 313a543c56e56c1b792d32e102c14e4f387667",
+	    "1 | Proposal hash [2/2]: 19793160621a591bfaedf22bb6",
+	    "2 | Maybe ref index : None",
+      "3 | Chain : Edgeware",
+      "4 | Nonce : 0",
+      "5 | Tip [1/2] : EDG 123456789012345678901.234567890123",
+      "5 | Tip [2/2] : 456789",
+      "6 | Era Phase : 61",
+      "7 | Era Period : 64",
+      "8 | Block [1/2] : 742a2ca70c2fda6cee4f8df98d64c4c670a052",
+      "8 | Block [2/2] : d9568058982dad9d5a7a135c5b"
+    ]
+  },
+  {
     "index": 756,
     "name": "Elections_Clean_Defunct_Voters",
     "blob": "0c050a00000005000000d5030033158139ae28a3dfaac5fe1560a5e9e05c3500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
