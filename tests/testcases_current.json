@@ -14288,15 +14288,15 @@
     "blob": "0a1776c672b55ad5e1442cd975e83662a443554ca6e26d566feb9e14ae9fd7c32b84010a000000d5038d2403d20296493500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
     "output": [
       "0 | Democracy : Blacklist",
-      "1 | Proposal hash [1/2] : 76c672b55ad5e1442cd975e83662a443554ca",
-	    "1 | Proposal hash [2/2] : 6e26d566feb9e14ae9fd7c32b84",
+      "1 | Proposal hash [1/2] : 76c672b55ad5e1442cd975e83662a443554ca6",
+	    "1 | Proposal hash [2/2] : e26d566feb9e14ae9fd7c32b84",
 	    "2 | Maybe ref index : 10",
       "3 | Tip : EDG 0.00000000123456789"
     ],
     "output_expert": [
       "0 | Democracy : Blacklist",
-      "1 | Proposal hash [1/2] : 76c672b55ad5e1442cd975e83662a443554ca",
-	    "1 | Proposal hash [2/2] : 6e26d566feb9e14ae9fd7c32b84",
+      "1 | Proposal hash [1/2] : 76c672b55ad5e1442cd975e83662a443554ca6",
+	    "1 | Proposal hash [2/2] : e26d566feb9e14ae9fd7c32b84",
 	    "2 | Maybe ref index : 10",
       "3 | Chain : Edgeware",
       "4 | Nonce : 2339",
