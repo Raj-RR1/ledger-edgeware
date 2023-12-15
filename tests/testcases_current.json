@@ -14237,14 +14237,12 @@
   {
     "index": 688,
     "name": "Democracy_Blacklist",
-    "blob": "0a177a3dab6f5599d7c3fa232df52657e0474b4f73c9b1ff144e459710440d3b2dd40100000000d503046d0f3500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
+    "blob": "0a177a3dab6f5599d7c3fa232df52657e0474b4f73c9b1ff144e459710440d3b2dd40100000000d5039101003500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
     "output": [
       "0 | Democracy : Blacklist",
       "1 | Proposal hash [1/2] : 7a3dab6f5599d7c3fa232df52657e0474b4f73",
 	    "1 | Proposal hash [2/2] : c9b1ff144e459710440d3b2dd4",
-	    "2 | Maybe ref index : 0",
-      "3 | Tip [1/2] : EDG 123456789012345678901.234567890123",
-      "3 | Tip [2/2] : 456789"
+	    "2 | Maybe ref index : 0"
     ],
     "output_expert": [
       "0 | Democracy : Blacklist",
@@ -14252,13 +14250,11 @@
 	    "1 | Proposal hash [2/2] : c9b1ff144e459710440d3b2dd4",
 	    "2 | Maybe ref index : 0",
       "3 | Chain : Edgeware",
-      "4 | Nonce : 0",
-      "5 | Tip [1/2] : EDG 123456789012345678901.234567890123",
-      "5 | Tip [2/2] : 456789",
-      "6 | Era Phase : 61",
-      "7 | Era Period : 64",
-      "8 | Block [1/2] : 742a2ca70c2fda6cee4f8df98d64c4c670a052",
-      "8 | Block [2/2] : d9568058982dad9d5a7a135c5b"
+      "4 | Nonce : 100",
+      "5 | Era Phase : 61",
+      "6 | Era Period : 64",
+      "7 | Block [1/2] : 742a2ca70c2fda6cee4f8df98d64c4c670a052",
+      "7 | Block [2/2] : d9568058982dad9d5a7a135c5b"
     ]
   },
   {
