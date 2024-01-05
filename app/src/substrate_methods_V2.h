@@ -598,7 +598,7 @@ typedef struct {
 
 #define PD_CALL_IDENTITY_SET_SUBS_V2 2
 typedef struct {
-    pd_VecTupleAccountIdData_t subs;
+    pd_VecTupleAccountIdData_V2_t subs;
 } pd_identity_set_subs_V2_t;
 
 #define PD_CALL_IDENTITY_CLEAR_IDENTITY_V2 3
@@ -632,7 +632,7 @@ typedef struct {
 typedef struct {
     pd_Compactu32_t reg_index;
     pd_LookupasStaticLookupSource_V2_t target;
-    pd_JudgementBalanceOfT_t judgement;
+    pd_JudgementBalanceOfT_V2_t judgement;
 } pd_identity_provide_judgement_V2_t;
 
 #define PD_CALL_IDENTITY_KILL_IDENTITY_V2 10
@@ -1160,12 +1160,12 @@ typedef union {
     pd_claims_move_claim_V2_t claims_move_claim_V2;
     pd_vesting_vest_V2_t vesting_vest_V2;
     pd_vesting_vest_other_V2_t vesting_vest_other_V2;
-    pd_vesting_vested_transfer_V2_t vesting_vested_transfer_V2
+    pd_vesting_vested_transfer_V2_t vesting_vested_transfer_V2;
     pd_vesting_force_vested_transfer_V2_t vesting_force_vested_transfer_V2;
     pd_vesting_merge_schedules_V2_t vesting_merge_schedules_V2;
     pd_identity_add_registrar_V2_t identity_add_registrar_V2;
     pd_identity_set_identity_V2_t identity_set_identity_V2;
-    pd_identity_set_subs_V2t identity_set_subs_V2;
+    pd_identity_set_subs_V2_t identity_set_subs_V2;
     pd_identity_clear_identity_V2_t identity_clear_identity_V2;
     pd_identity_request_judgement_V2_t identity_request_judgement_V2;
     pd_identity_cancel_request_V2_t identity_cancel_request_V2;

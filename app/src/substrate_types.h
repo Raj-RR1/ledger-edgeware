@@ -196,6 +196,12 @@ typedef struct {
 } pd_Vecu32_t;
 
 typedef struct {
+    uint64_t _len;
+    const uint8_t* _ptr;
+    uint64_t _lenBuffer;
+} pd_Vecu8_t;
+
+typedef struct {
     uint8_t value;
 } pd_Percent_t;
 
