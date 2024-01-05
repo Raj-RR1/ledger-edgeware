@@ -136,6 +136,12 @@ typedef struct {
 } pd_VecTupleDataData_t;
 
 typedef struct {
+    pd_BalanceOf_t locked;
+    pd_BalanceOf_t per_block;
+    pd_BlockNumber_t starting_block;
+} pd_VestingInfo_t;
+
+typedef struct {
     pd_VecTupleDataData_t additional;
     pd_Data_t display;
     pd_Data_t legal;
