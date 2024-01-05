@@ -45,6 +45,7 @@ parser_error_t _readCall(parser_context_t* c, pd_Call_t* v);
 parser_error_t _readHeader(parser_context_t* c, pd_Header_t* v);
 parser_error_t _readIdentityInfo(parser_context_t* c, pd_IdentityInfo_t* v);
 parser_error_t _readOptionu8_array_20(parser_context_t* c, pd_Optionu8_array_20_t* v);
+parser_error_t _readOptionu32(parser_context_t* c, pd_Optionu32_t* v);
 parser_error_t _readPercent(parser_context_t* c, pd_Percent_t* v);
 parser_error_t _readVecTupleDataData(parser_context_t* c, pd_VecTupleDataData_t* v);
 parser_error_t _readProposal(parser_context_t* c, pd_Proposal_t* v);
@@ -187,6 +188,13 @@ parser_error_t _toStringIdentityInfo(
 
 parser_error_t _toStringOptionu8_array_20(
     const pd_Optionu8_array_20_t* v,
+    char* outValue,
+    uint16_t outValueLen,
+    uint8_t pageIdx,
+    uint8_t* pageCount);
+
+parser_error_t _toStringOptionu32(
+    const pd_Optionu32_t* v,
     char* outValue,
     uint16_t outValueLen,
     uint8_t pageIdx,
