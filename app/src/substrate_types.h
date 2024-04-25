@@ -85,9 +85,8 @@ typedef struct {
 } pd_Balance_t;
 
 typedef struct {
-    uint8_t type;
+    uint8_t value;
     const uint8_t* _ptr;
-    uint8_t _len;
 } pd_Data_t;
 
 typedef struct {

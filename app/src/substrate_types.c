@@ -123,37 +123,17 @@ parser_error_t _readBalance(parser_context_t* c, pd_Balance_t* v) {
 
 parser_error_t _readData(parser_context_t* c, pd_Data_t* v)
 {
-    CHECK_INPUT();
-    MEMZERO(v, sizeof(pd_Data_t));
-    CHECK_ERROR(_readUInt8(c, (uint8_t*)&v->type))
-
-    v->_ptr = NULL;
-    v->_len = 0;
-
-    // based on:
-    // https://github.com/paritytech/substrate/blob/effe489951d1edab9d34846b1eefdfaf9511dab9/frame/identity/src/lib.rs#L139
-    switch (v->type) {
-    case Data_e_NONE: {
-        v->_ptr = NULL;
-        v->_len = 0;
+    CHECK_INPUT()
+    CHECK_ERROR(_readUInt8(c, &v->value))
+    if (v->value <= 1) {
         return parser_ok;
+    } else if (v->value <= 37) {
+        const uint8_t length = v->value <= 32 ? v->value - 1 : 32;
+        GEN_DEF_READARRAY(length)
+    } else {
+        return parser_unexpected_value;
     }
-    case Data_e_BLAKETWO256U8_32:
-    case Data_e_SHA256_U8_32:
-    case Data_e_KECCAK256_U8_32:
-    case Data_e_SHATHREE256_U8_32:
-        return parser_not_supported;
-    default: {
-        if (v->type > Data_e_NONE && v->type <= Data_e_RAW_VECU8) {
-            const uint8_t bufferSize = ((uint8_t)v->type - 1);
-            v->_ptr = c->buffer + c->offset;
-            v->_len = bufferSize;
-            CTX_CHECK_AND_ADVANCE(c, v->_len);
-            return parser_ok;
-        }
-        return parser_not_supported;
-    }
-    }
+    return parser_ok;
 }
 
 parser_error_t _readBalanceOf(parser_context_t* c, pd_BalanceOf_t* v)
@@ -511,34 +491,32 @@ parser_error_t _toStringData(
     uint8_t pageIdx,
     uint8_t* pageCount)
 {
-    CLEAN_AND_CHECK()
-
-    if (v->_ptr == NULL || v->_len == 0) {
-        return parser_unexpected_value;
-    }
-
-    if (v->type > Data_e_NONE && v->type <= Data_e_RAW_VECU8) {
-        const uint8_t bufferSize = ((uint8_t)v->type - 1);
-        GEN_DEF_TOSTRING_ARRAY(bufferSize)
-    }
-
-    switch (v->type) {
-    case Data_e_NONE:
-        *pageCount = 1;
+ CLEAN_AND_CHECK()
+    *pageCount = 1;
+    if (v->value == 0) {
         snprintf(outValue, outValueLen, "None");
         return parser_ok;
-    case Data_e_RAW_VECU8:
-        // This should have been handled before (1..33)
+    } else if (v->value == 1) {
+        snprintf(outValue, outValueLen, "Empty raw");
+        return parser_ok;
+    } else if (v->value > 37) {
         return parser_unexpected_value;
-    case Data_e_BLAKETWO256U8_32:
-    case Data_e_SHA256_U8_32:
-    case Data_e_KECCAK256_U8_32:
-    case Data_e_SHATHREE256_U8_32:
-    default:
-        break;
     }
-
-    return parser_print_not_supported;
+    const uint8_t length = v->value <= 32 ? v->value - 1 : 32;
+    bool allPrintable = true;
+    if (v->value <= 33) {
+        for (uint8_t i = 0; i < length; i++) {
+            allPrintable &= IS_PRINTABLE(v->_ptr[i]);
+        }
+    }
+    if (v->value <= 33 && allPrintable) {
+        char bufferUI[40] = { 0 };
+        snprintf(bufferUI, length + 1, "%s", v->_ptr); // it counts null terminator
+        pageString(outValue, outValueLen, (const char*)bufferUI, pageIdx, pageCount);
+    } else {
+        GEN_DEF_TOSTRING_ARRAY(length)
+    }
+    return parser_ok;
 }
 
 parser_error_t _toStringBalanceOf(
