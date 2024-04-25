@@ -52,3 +52,10 @@ zxerr_t tx_getItem(int8_t displayIdx,
                    char *outKey, uint16_t outKeyLen,
                    char *outValue, uint16_t outValueLen,
                    uint8_t pageIdx, uint8_t *pageCount);
+
+                   zxerr_t tx_raw_getNumItems(uint8_t *num_items);
+
+zxerr_t tx_raw_getItem(int8_t displayIdx,
+                       char *outKey, uint16_t outKeyLen,
+                       char *outValue, uint16_t outValueLen,
+                       uint8_t pageIdx, uint8_t *pageCount);

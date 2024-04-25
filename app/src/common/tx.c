@@ -131,3 +131,83 @@ zxerr_t tx_getItem(int8_t displayIdx,
 
     return zxerr_ok;
 }
+
+zxerr_t tx_raw_getNumItems(uint8_t *num_items) {
+
+    *num_items = 2;
+
+    return zxerr_ok;
+
+}
+
+
+
+zxerr_t tx_raw_getItem(int8_t displayIdx,
+
+                       char *outKey, uint16_t outKeyLen,
+
+                       char *outVal, uint16_t outValLen,
+
+                       uint8_t pageIdx, uint8_t *pageCount) {
+
+    MEMZERO(outKey, outKeyLen);
+
+    MEMZERO(outVal, outValLen);
+
+
+
+    uint8_t numItems = 0;
+
+    CHECK_ZXERR(tx_raw_getNumItems(&numItems))
+
+    if (displayIdx < 0 || displayIdx >= numItems) return zxerr_no_data;
+
+
+
+    if (displayIdx == 0) {
+
+        *pageCount = 1;
+
+        snprintf(outKey, outKeyLen, "Sign and Verify");
+
+        snprintf(outVal, outValLen, "Arbitrary text");
+
+        return zxerr_ok;
+
+    }
+
+    const uint8_t *buf = tx_get_buffer();
+
+    const uint16_t bufLen = tx_get_buffer_length();
+
+    if (buf == NULL) return zxerr_no_data;
+
+
+
+    bool allPrintable = true;
+
+    for (uint16_t i = 0; i < bufLen; i++) {
+
+        allPrintable &= IS_PRINTABLE(buf[i]);
+
+    }
+
+    if (allPrintable) {
+
+        snprintf(outKey, outKeyLen, "Payload");
+
+        pageStringExt(outVal, outValLen, (const char*)buf, bufLen, pageIdx, pageCount);
+
+    } else {
+
+        snprintf(outKey, outKeyLen, "Payload (hex)");
+
+        pageStringHex(outVal, outValLen, (const char*)buf, bufLen, pageIdx, pageCount);
+
+    }
+
+
+
+    return zxerr_ok;
+
+}
