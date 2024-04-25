@@ -13747,5 +13747,48 @@
       "8 | Block [1/2] : 742a2ca70c2fda6cee4f8df98d64c4c670a052",
       "8 | Block [2/2] : d9568058982dad9d5a7a135c5b"
     ]
+  },
+  {
+    "index": 611,
+    "name": "Identity_Set_identity",
+    "blob": "170104000e6e6f2065787472612064617461075a6f6e6461780a5a6f6e6461782041471268747470733a2f2f7a6f6e6461782e636818406e6f52696f744163636f756e74466f725a6f6e6461781068656c6c6f407a6f6e6461782e6368010d307b73b836bc0fdc86f5f1b96fea0aaaac77ee2168747470733a2f2f7a6f6e6461782e63682f636f6d70616e792d6173736574730a405f7a6f6e6461785fd5030033158139ae28a3dfaac5fe1560a5e9e05c3500000002000000742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b742a2ca70c2fda6cee4f8df98d64c4c670a052d9568058982dad9d5a7a135c5b",
+    "output": [
+      "0 | Identity : Set identity",
+      "1 | Info [1/11] : None",
+      "1 | Info [2/11] : no extra data",
+      "1 | Info [3/11] : Zondax",
+      "1 | Info [4/11] : Zondax AG",
+      "1 | Info [5/11] : https://zondax.ch",
+      "1 | Info [6/11] : @noRiotAccountForZondax",
+      "1 | Info [7/11] : hello@zondax.ch",
+      "1 | Info [8/11] : 0d307b73b836bc0fdc86f5f1b96fea0aaaac77",
+      "1 | Info [9/11] : ee",
+      "1 | Info [10/11] : https://zondax.ch/company-assets",
+      "1 | Info [11/11] : @_zondax_",
+      "2 | Tip [1/2] : EDG 123456789012345678901.234567890123",
+      "2 | Tip [2/2] : 456789"
+    ],
+    "output_expert": [
+      "0 | Identity : Set identity",
+      "1 | Info [1/11] : None",
+      "1 | Info [2/11] : no extra data",
+      "1 | Info [3/11] : Zondax",
+      "1 | Info [4/11] : Zondax AG",
+      "1 | Info [5/11] : https://zondax.ch",
+      "1 | Info [6/11] : @noRiotAccountForZondax",
+      "1 | Info [7/11] : hello@zondax.ch",
+      "1 | Info [8/11] : 0d307b73b836bc0fdc86f5f1b96fea0aaaac77",
+      "1 | Info [9/11] : ee",
+      "1 | Info [10/11] : https://zondax.ch/company-assets",
+      "1 | Info [11/11] : @_zondax_",
+      "2 | Chain : Edgeware",
+      "3 | Nonce : 0",
+      "4 | Tip [1/2] : EDG 123456789012345678901.234567890123",
+      "4 | Tip [2/2] : 456789",
+      "5 | Era Phase : 61",
+      "6 | Era Period : 64",
+      "7 | Block [1/2] : 742a2ca70c2fda6cee4f8df98d64c4c670a052",
+      "7 | Block [2/2] : d9568058982dad9d5a7a135c5b"
+    ]
   }
 ]
